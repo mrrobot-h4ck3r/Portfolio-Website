@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberSec Portfolio | Ankush</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- 3D Background Canvas -->
+    <canvas id="3d-bg"></canvas>
+
+    <!-- Animated Cyber Background -->
+    <div id="cyber-bg">
+        <canvas id="matrix-canvas"></canvas>
+        <canvas id="particles-canvas"></canvas>
+    </div>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Cyber<span>Sec</span></a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certs">Certifications</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Hi, I'm <span>Ankush</span></h1>
+            <h2>Cyber Security Specialist</h2>
+            <p>Protecting systems, securing networks, and ethical hacking.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn">Get In Touch</a>
+                <a href="Resume-1.pdf" download="Resume.pdf" class="btn btn-resume">
+                    <i class="fas fa-download"></i> Download Resume
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About <span>Me</span></h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I am a cybersecurity professional with 8+ months of hands-on internship experience in
+                        penetration testing, vulnerability assessment, and digital forensics. Passionate about securing
+                        digital infrastructures, I specialize in identifying and mitigating security risks using
+                        industry-leading tools like Burp Suite, OWASP ZAP, Nmap, Metasploit, Nessus, and Acunetix.
+                    </p>
+                    <p>With 3 years of experience, I've worked on securing website, Bug bounties, conducting
+                        vulnerability
+                        assessments, and implementing robust security measures.</p>
+
+                    <p>🔹 What I Bring to the Table</p>
+                    <p>✔ Practical Experience – Worked on real-world security assessments, threat analysis, and
+                        incident response during internships.</p>
+                    <p>✔ Technical Proficiency – Skilled in Linux, Network Security, Web App Security, and Digital
+                        Forensics.</p>
+                    <p>✔ Security Advocacy – Actively promote cyber safety awareness to combat growing cyber threats.
+                    </p>
+                    <p>🔹 Current Focus
+                        🚀 Excited to begin my 1-month virtual internship at Shadowfox (june 2025), where I will:
+                        - Tackle real-time cybersecurity challenges in simulated environments.
+                        - Enhance my skills in advanced security tools & techniques.
+                        - Collaborate with mentors & peers to solve real-world security problems.
+                    </p>
+                    <p>🔹 Past Experience (Internships)
+                        - Cyber Security & Digital Forensics Intern
+
+                        – TechnoHacks EduTech | Cyber Secured India
+
+                        - Web Development & Security Intern – Mission IT Education
+                    </p>
+                    <p>🔹 Why Cybersecurity?
+                        I believe in a secure digital future and strive to contribute through ethical hacking, research,
+                        and awareness. Always eager to learn, adapt, and take on new challenges in this ever-evolving
+                        field.
+
+                        📩 Let’s connect to discuss cybersecurity, open to collaboration, or opportunities!</p>
+
+                </div>
+                <div class="about-image">
+                    <img src="images/ssss.jpg" alt="Your Image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2>My <span>Skills</span></h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Penetration Testing</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-network-wired"></i>
+                    <h3>Network Security</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-lock"></i>
+                    <h3>Cryptography</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-bug"></i>
+                    <h3>Malware Analysis</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Secure Coding</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-cloud"></i>
+                    <h3>Cloud Security</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-cloud"></i>
+                    <h3>Web Security</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certs" class="section">
+        <div class="container">
+            <h2>My <span>Certifications</span></h2>
+            <div class="certs-grid">
+                <div class="cert-card" onclick="openModal('images/Defronix.jpeg')">
+                    <img src="images/Defronix.jpeg" alt="Certification">
+                    <h3>Defronix Certified Junior Security
+                        Practitioner</h3>
+                </div>
+               
+                <div class="cert-card" onclick="openModal('images/ARC.png')">
+                    <img src="images/ARC.png" alt="Certification">
+                    <h3>CYBER THREAT INTELLIGENCE 101 (CTI101)</h3>
+                </div>
+                <div class="cert-card" onclick="openModal('path/to/cert1.jpg')">
+                    <img src="images/CAP.png" alt="Certification">
+                    <h3>CERTIFIED APPSEC PRACTITIONER (CAP)</h3>
+                </div>
+                
+                <div class="cert-card" onclick="openModal('path/to/cert1.jpg')">
+                    <img src="images/red_team.png"Certification">
+                    <h3>Red Teaming Course</h3>
+                </div>
+                 <div class="cert-card" onclick="openModal('images/Practical_eth.png')">
+                    <img src="images/practiCal.png" alt="Certification">
+                    <h3>Practical Ethical Hacking - The Complete Course</h3>
+                </div>
+                <div class="cert-card" onclick="openModal('path/to/cert1.jpg')">
+                    <img src="images/internship.png" alt="Certification">
+                    <h3>Cyber Rakshak Internship</h3>
+                </div>
+
+                <div class="cert-card" onclick="openModal('images/Practical_eth.png')">
+                    <img src="images/EHE.jpeg" alt="Certification">
+                    <h3>Ethical Hacking Essentials (EHE)</h3>
+                </div>
+                 <div class="cert-card" onclick="openModal('images/Practical_eth.png')">
+                    <img src="images/internship1.png" alt="Certification">
+                    <h3>Cyber security & Digital Forensics Internship</h3>
+                </div>
+                <div class="cert-card" onclick="openModal('images/Practical_eth.png')">
+                    <img src="images/safs.jpeg" alt="Certification">
+                    <h3>Security Engineer Learning path 
+</h3>
+                </div>
+                <div class="cert-card" onclick="openModal('path/to/cert1.jpg')">
+                    <img src="images/casestudyletter.jpeg" alt="Certification">
+                    <h3>letter of Case Study</h3>
+                </div>
+                <div class="cert-card" onclick="openModal('path/to/cert1.jpg')">
+                    <img src="images/MCEH.jpeg" alt="Certification">
+                    <h3>Metaxone Certified Ethical Hacker</h3>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2>My <span>Projects</span></h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/400x250" alt="Project">
+                    <h3>Network Vulnerability Scanner</h3>
+                    <p>A Python-based tool for detecting vulnerabilities in networks.</p>
+                    <a href="#" class="btn">View Project</a>
+                </div>
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/400x250" alt="Project">
+                    <h3>Secure Authentication System</h3>
+                    <p>Implemented MFA for enhanced security.</p>
+                    <a href="#" class="btn">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Get In <span>Touch</span></h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>hanonymous985@gmail.com</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+91 8869088124</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>India</p>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Ankush. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="https://github.com/mrrobot-h4ck3r"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/mrrobot-h4ck3r"><i class="fab fa-linkedin"></i></a>
+                <a href="https://twitter.com/mrrobot_h4ck3r"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/three.min.js"></script>
+    <script src="js/script.js"></script>
+    <!-- Certificate Modal -->
+<div id="cert-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <img id="modal-cert-image" src="" alt="Certificate">
+  </div>
+</div>
+</body>
+
+</html>

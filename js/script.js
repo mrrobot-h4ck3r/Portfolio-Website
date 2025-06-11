@@ -109,7 +109,7 @@ const nextBtn = document.querySelector(".next-btn");
 
 // Store all certificates data
 const certificates = [
-    { thumb: "../images/Defronix.jpeg", full: "../images/Defronix.jpeg" },
+    { thumb: "#", full: "../images/Defronix.jpeg" },
     { thumb: "../images/ARC.png", full: "../images/ARC.png" },
     { thumb: "../images/CAP.png", full: "../images/CAP.png" },
     { thumb: "../images/red_team.png", full: "../images/red_team.png" },

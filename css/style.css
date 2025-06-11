@@ -330,7 +330,103 @@ canvas#3d-bg {
     border-radius: 5px;
     margin-bottom: 15px;
 }
+/* Certificate Viewer */
+.cert-viewer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 2000;
+  display: none;
+  backdrop-filter: blur(5px);
+}
 
+.viewer-container {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.close-viewer {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  color: #00ff88;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 10;
+}
+
+.close-viewer:hover {
+  color: #fff;
+  text-shadow: 0 0 15px #00ff88;
+}
+
+.cert-display {
+  max-width: 90%;
+  max-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#viewer-cert-image {
+  max-width: 100%;
+  max-height: 90vh;
+  border: 2px solid #00ff88;
+  box-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
+  animation: certFadeIn 0.4s ease-out;
+}
+
+@keyframes certFadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.cert-nav {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.nav-btn {
+  background: rgba(0, 255, 136, 0.2);
+  border: 1px solid #00ff88;
+  color: #00ff88;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.nav-btn:hover {
+  background: rgba(0, 255, 136, 0.4);
+  transform: scale(1.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .cert-display {
+    max-width: 95%;
+  }
+  .nav-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+}
 /* Projects Section */
 .projects-grid {
     display: grid;
@@ -370,33 +466,87 @@ canvas#3d-bg {
     margin: 0 20px 20px;
     display: inline-block;
 }
+/* Contact Section - Modern Cyber Style */
+.contact-section {
+    padding: 80px 10;
+    background: rgba(10, 10, 10, 0.7);
+    backdrop-filter: blur(5px);
+    border-top: 1px solid rgba(0, 255, 136, 0.1);
+}
 
-/* Contact Section */
 .contact-content {
     display: flex;
     gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .contact-info {
     flex: 1;
+    padding: 30px;
+    background: rgba(20, 20, 20, 0.7);
+    border-radius: 8px;
+    border: 1px solid rgba(0, 255, 136, 0.3);
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.1);
+    max-width: 380px; /* Added fixed width */
+    margin-right: 50px; /* Added spacing from form */
 }
 
 .info-item {
     display: flex;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    border-left: 3px solid #00ff88;
+    transition: all 0.3s ease;
+}
+
+.info-item:hover {
+    background: rgba(0, 255, 136, 0.1);
+    transform: translateX(5px);
 }
 
 .info-item i {
-    font-size: 1.5rem;
-    margin-right: 20px;
+    font-size: 1.2rem;
+    margin-right: 15px;
     color: #00ff88;
+    min-width: 20px;
+    text-align: center;
+}
+
+
+.contact-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+    word-break: break-all;
+}
+
+.contact-link:hover {
+    color: #00ff88;
+    text-shadow: 0 0 5px rgba(0, 255, 136, 0.5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contact-info {
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
 }
 
 .contact-form {
     flex: 1;
-    display: flex;
-    flex-direction: column;
+    padding: 30px;
+    background: rgba(20, 20, 20, 0.5);
+    border-radius: 10px;
+    border: 1px solid rgba(0, 255, 136, 0.2);
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.05);
 }
 
 .contact-form input,
@@ -405,9 +555,18 @@ canvas#3d-bg {
     padding: 15px;
     margin-bottom: 20px;
     background: rgba(255, 255, 255, 0.05);
-    border: none;
+    border: 1px solid rgba(0, 255, 136, 0.3);
     border-radius: 5px;
     color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #00ff88;
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
 }
 
 .contact-form textarea {
@@ -417,6 +576,142 @@ canvas#3d-bg {
 
 .contact-form button {
     align-self: flex-start;
+    padding: 12px 30px;
+    background: #00ff88;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+.contact-form button:hover {
+    background: #00cc6a;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .contact-info,
+    .contact-form {
+        width: 100%;
+    }
+}
+
+/* Cyber Form Styling */
+.cyber-form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  background: rgba(10, 10, 10, 0.7);
+  border-radius: 8px;
+  border: 1px solid rgba(0, 255, 136, 0.3);
+}
+
+.cyber-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  color: #00ff88;
+  margin-bottom: 8px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.input-line, .textarea-line {
+  position: relative;
+}
+
+.input-line input, 
+.textarea-line textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(0, 255, 136, 0.3);
+  color: white;
+  padding: 10px 0;
+  font-size: 1rem;
+}
+
+.textarea-line textarea {
+  height: 120px;
+  resize: none;
+}
+
+.line {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 1px;
+  background: #00ff88;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.3s ease;
+}
+
+.input-line:hover .line,
+.textarea-line:hover .line {
+  transform: scaleY(1);
+}
+
+.cyber-submit-btn {
+  background: transparent;
+  color: #00ff88;
+  border: none;
+  padding: 12px 0;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.cyber-submit-btn .line {
+  height: 1px;
+  width: 30px;
+  background: #00ff88;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.cyber-submit-btn:hover .line {
+  transform: scaleX(1);
+}
+
+/* Form Animation */
+input:focus, textarea:focus {
+  outline: none;
+  border-bottom-color: #00ff88;
+}
+
+input:focus ~ .line,
+textarea:focus ~ .line {
+  transform: scaleY(1);
 }
 
 /* Footer */

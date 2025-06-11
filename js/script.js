@@ -1,5 +1,5 @@
 // Mobile Menu Toggle
-document.querySelector('.menu-toggle').addEventListener('click', function() {
+document.querySelector('.menu-toggle').addEventListener('click', function () {
     document.querySelector('.nav-links').classList.toggle('active');
 });
 
@@ -22,14 +22,14 @@ for (let i = 0; i < columns; i++) {
 function drawMatrix() {
     matrixCtx.fillStyle = 'rgba(0, 0, 0, 0.05)';
     matrixCtx.fillRect(0, 0, matrixCanvas.width, matrixCanvas.height);
-    
+
     matrixCtx.fillStyle = '#00ff88';
     matrixCtx.font = `${fontSize}px monospace`;
-    
+
     for (let i = 0; i < drops.length; i++) {
         const text = binaryChars.charAt(Math.floor(Math.random() * binaryChars.length));
         matrixCtx.fillText(text, i * fontSize, drops[i] * fontSize);
-        
+
         if (drops[i] * fontSize > matrixCanvas.height && Math.random() > 0.975) {
             drops[i] = 0;
         }
@@ -63,24 +63,24 @@ for (let i = 0; i < particleCount; i++) {
 
 function drawParticles() {
     particlesCtx.clearRect(0, 0, particlesCanvas.width, particlesCanvas.height);
-    
+
     for (let i = 0; i < particles.length; i++) {
         const p = particles[i];
-        
+
         particlesCtx.beginPath();
         particlesCtx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         particlesCtx.fillStyle = p.color;
         particlesCtx.shadowBlur = 10;
         particlesCtx.shadowColor = p.color;
         particlesCtx.fill();
-        
+
         p.x += p.speedX;
         p.y += p.speedY;
-        
+
         if (p.x < 0 || p.x > particlesCanvas.width) p.speedX *= -1;
         if (p.y < 0 || p.y > particlesCanvas.height) p.speedY *= -1;
     }
-    
+
     requestAnimationFrame(drawParticles);
 }
 
@@ -91,7 +91,7 @@ drawParticles();
 
 // Smooth Scrolling for Nav Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', function (e) {
         e.preventDefault();
         document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
@@ -100,6 +100,82 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 
+// Certificate Viewer Functionality
+const certViewer = document.getElementById("cert-viewer");
+const viewerImage = document.getElementById("viewer-cert-image");
+const closeViewer = document.querySelector(".close-viewer");
+const prevBtn = document.querySelector(".prev-btn");
+const nextBtn = document.querySelector(".next-btn");
+
+// Store all certificates data
+const certificates = [
+    { thumb: "path/to/cert1-thumb.jpg", full: "../images/Defronix.jpeg" },
+    { thumb: "path/to/cert1-thumb.jpg", full: "../images/ARC.png" },
+    { thumb: "path/to/cert2-thumb.jpg", full: "../images/CAP.png" },
+    { thumb: "path/to/cert2-thumb.jpg", full: "../images/red_team.png" },
+    { thumb: "path/to/cert1-thumb.jpg", full: "../images/practiCal.png" },
+    { thumb: "path/to/cert2-thumb.jpg", full: "../images/internship.png" }, 
+    { thumb: "path/to/cert1-thumb.jpg", full: "../images/EHE.jpeg" },
+    { thumb: "path/to/cert2-thumb.jpg", full: "../images/internship1.png" },
+    { thumb: "path/to/cert1-thumb.jpg", full: "../images/safs.jpeg" },
+    { thumb: "path/to/cert2-thumb.jpg", full: "../images/casestudyletter.jpeg" },
+    { thumb: "path/to/cert2-thumb.jpg", full: "../images/MCEH.jpeg" }
+    // Add all your certificates here
+];
+
+let currentCertIndex = 0;
+
+// Open viewer with clicked certificate
+function openCertificateViewer(index) {
+    currentCertIndex = index;
+    viewerImage.src = certificates[index].full;
+    certViewer.style.display = "block";
+    document.body.style.overflow = "hidden";
+}
+
+// Close viewer
+function closeCertificateViewer() {
+    certViewer.style.display = "none";
+    document.body.style.overflow = "auto";
+}
+
+// Navigation functions
+function showPrevCert() {
+    currentCertIndex = (currentCertIndex - 1 + certificates.length) % certificates.length;
+    viewerImage.src = certificates[currentCertIndex].full;
+}
+
+function showNextCert() {
+    currentCertIndex = (currentCertIndex + 1) % certificates.length;
+    viewerImage.src = certificates[currentCertIndex].full;
+}
+
+// Event Listeners
+closeViewer.addEventListener("click", closeCertificateViewer);
+prevBtn.addEventListener("click", showPrevCert);
+nextBtn.addEventListener("click", showNextCert);
+
+// Close when clicking outside image
+certViewer.addEventListener("click", function (e) {
+    if (e.target === certViewer) {
+        closeCertificateViewer();
+    }
+});
+
+// Keyboard navigation
+document.addEventListener("keydown", function (e) {
+    if (certViewer.style.display === "block") {
+        if (e.key === "Escape") closeCertificateViewer();
+        if (e.key === "ArrowLeft") showPrevCert();
+        if (e.key === "ArrowRight") showNextCert();
+    }
+});
+
+// Update your certificate items to use this function
+document.querySelectorAll(".cert-card").forEach((card, index) => {
+    card.addEventListener("click", () => openCertificateViewer(index));
+});
+
 
 // Certificate Modal Functionality
 const modal = document.getElementById("cert-modal");
@@ -107,29 +183,29 @@ const modalImg = document.getElementById("modal-cert-image");
 const closeBtn = document.querySelector(".close-modal");
 
 function openModal(imgSrc) {
-  modal.style.display = "block";
-  modalImg.src = imgSrc;
-  document.body.style.overflow = "hidden"; // Prevent scrolling
+    modal.style.display = "block";
+    modalImg.src = imgSrc;
+    document.body.style.overflow = "hidden"; // Prevent scrolling
 }
 
 function closeModal() {
-  modal.style.display = "none";
-  document.body.style.overflow = "auto"; // Re-enable scrolling
+    modal.style.display = "none";
+    document.body.style.overflow = "auto"; // Re-enable scrolling
 }
 
 // Close modal when clicking X or outside
 closeBtn.onclick = closeModal;
-window.onclick = function(event) {
-  if (event.target == modal) {
-    closeModal();
-  }
+window.onclick = function (event) {
+    if (event.target == modal) {
+        closeModal();
+    }
 }
 
 // Close with ESC key
-document.onkeydown = function(event) {
-  if (event.key === "Escape") {
-    closeModal();
-  }
+document.onkeydown = function (event) {
+    if (event.key === "Escape") {
+        closeModal();
+    }
 }
 
 // 3D Background using Three.js
@@ -142,10 +218,10 @@ if (document.getElementById('3d-bg')) {
 
     // Floating Geometry
     const geometry = new THREE.IcosahedronGeometry(1, 0);
-    const material = new THREE.MeshPhongMaterial({ 
+    const material = new THREE.MeshPhongMaterial({
         color: 0x00ff88,
         emissive: 0x003300,
-        shininess: 100 
+        shininess: 100
     });
 
     const shapes = [];
@@ -188,3 +264,55 @@ if (document.getElementById('3d-bg')) {
         renderer.setSize(window.innerWidth, window.innerHeight);
     });
 }
+
+// Contact Form Submission
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  const formData = new FormData(this);
+  const formObject = Object.fromEntries(formData.entries());
+  
+  // Send email using FormSubmit.co (free service)
+  fetch('https://formsubmit.co/ajax/hanonymous985@gmail.com', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+    body: JSON.stringify(formObject)
+  })
+  .then(response => response.json())
+  .then(data => {
+    alert('Message sent successfully!');
+    this.reset();
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    alert('There was a problem sending your message.');
+  });
+});
+
+// Form Submission with Animation
+document.getElementById('cyber-contact-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  // Get form values
+  const formData = new FormData(this);
+  
+  // Simple animation on submit
+  const submitBtn = document.querySelector('.cyber-submit-btn');
+  submitBtn.innerHTML = '<span>Sending...</span>';
+  submitBtn.disabled = true;
+  
+  // Simulate sending (replace with actual form submission)
+  setTimeout(() => {
+    submitBtn.innerHTML = '<span>Message Sent!</span>';
+    this.reset();
+    
+    setTimeout(() => {
+      submitBtn.innerHTML = '<span>Send Message</span><div class="line"></div>';
+      submitBtn.disabled = false;
+    }, 2000);
+  }, 1500);
+  
+});

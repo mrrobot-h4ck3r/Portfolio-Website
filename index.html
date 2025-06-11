@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CyberSec Portfolio | Ankush</title>
+    <title>mrrobot-h4ck3r Portfolio | Ankush</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -21,7 +21,7 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="container">
-            <a href="#" class="logo">Cyber<span>Sec</span></a>
+            <a href="#" class="logo">mrrobot-<span>h4ck3r</span></a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
@@ -39,7 +39,7 @@
     <section class="hero">
         <div class="container">
             <h1>Hi, I'm <span>Ankush</span></h1>
-            <h2>Cyber Security Specialist</h2>
+            <h2>Cyber Security Researcher</h2>
             <p>Protecting systems, securing networks, and ethical hacking.</p>
             <div class="hero-buttons">
                 <a href="#contact" class="btn">Get In Touch</a>
@@ -132,7 +132,7 @@
                     <h3>Cloud Security</h3>
                 </div>
                 <div class="skill-card">
-                    <i class="fas fa-cloud"></i>
+                    <i class="fas fa-shield-alt"></i>
                     <h3>Web Security</h3>
                 </div>
             </div>
@@ -149,51 +149,64 @@
                     <h3>Defronix Certified Junior Security
                         Practitioner</h3>
                 </div>
-               
+
                 <div class="cert-card" onclick="openModal('images/ARC.png')">
                     <img src="images/ARC.png" alt="Certification">
                     <h3>CYBER THREAT INTELLIGENCE 101 (CTI101)</h3>
                 </div>
-                <div class="cert-card" onclick="openModal('path/to/cert1.jpg')">
+                <div class="cert-card" onclick="openModal('images/CAP.png')">
                     <img src="images/CAP.png" alt="Certification">
                     <h3>CERTIFIED APPSEC PRACTITIONER (CAP)</h3>
                 </div>
-                
-                <div class="cert-card" onclick="openModal('path/to/cert1.jpg')">
-                    <img src="images/red_team.png"Certification">
+
+                <div class="cert-card" onclick="openModal('images/red_team.png')">
+                    <img src="images/red_team.png" alt="Certification">
                     <h3>Red Teaming Course</h3>
                 </div>
-                 <div class="cert-card" onclick="openModal('images/Practical_eth.png')">
+                <div class="cert-card" onclick="openModal('images/practiCal.png')">
                     <img src="images/practiCal.png" alt="Certification">
                     <h3>Practical Ethical Hacking - The Complete Course</h3>
                 </div>
-                <div class="cert-card" onclick="openModal('path/to/cert1.jpg')">
+                <div class="cert-card" onclick="openModal('images/internship.png')">
                     <img src="images/internship.png" alt="Certification">
                     <h3>Cyber Rakshak Internship</h3>
                 </div>
 
-                <div class="cert-card" onclick="openModal('images/Practical_eth.png')">
+                <div class="cert-card" onclick="openModal('iimages/EHE.jpeg')">
                     <img src="images/EHE.jpeg" alt="Certification">
                     <h3>Ethical Hacking Essentials (EHE)</h3>
                 </div>
-                 <div class="cert-card" onclick="openModal('images/Practical_eth.png')">
+                <div class="cert-card" onclick="openModal('images/internship1.png')">
                     <img src="images/internship1.png" alt="Certification">
                     <h3>Cyber security & Digital Forensics Internship</h3>
                 </div>
-                <div class="cert-card" onclick="openModal('images/Practical_eth.png')">
+                <div class="cert-card" onclick="openModal('images/safs.jpeg')">
                     <img src="images/safs.jpeg" alt="Certification">
-                    <h3>Security Engineer Learning path 
-</h3>
+                    <h3>Security Engineer Learning path
+                    </h3>
                 </div>
-                <div class="cert-card" onclick="openModal('path/to/cert1.jpg')">
+                <div class="cert-card" onclick="openModal('images/casestudyletter.jpeg')">
                     <img src="images/casestudyletter.jpeg" alt="Certification">
                     <h3>letter of Case Study</h3>
                 </div>
-                <div class="cert-card" onclick="openModal('path/to/cert1.jpg')">
+                <div class="cert-card" onclick="openModal('images/MCEH.jpeg')">
                     <img src="images/MCEH.jpeg" alt="Certification">
                     <h3>Metaxone Certified Ethical Hacker</h3>
                 </div>
-                
+
+            </div>
+        </div>
+        <!-- Certificate Viewer -->
+        <div id="cert-viewer" class="cert-viewer">
+            <div class="viewer-container">
+                <span class="close-viewer">&times;</span>
+                <div class="cert-display">
+                    <img id="viewer-cert-image" src="" alt="Certificate">
+                </div>
+                <div class="cert-nav">
+                    <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                    <button class="nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
             </div>
         </div>
     </section>
@@ -204,16 +217,26 @@
             <h2>My <span>Projects</span></h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <img src="https://via.placeholder.com/400x250" alt="Project">
+                    <!-- <img src="https://github.com/mrrobot-h4ck3r/port-scanner" alt="Project"> -->
                     <h3>Network Vulnerability Scanner</h3>
-                    <p>A Python-based tool for detecting vulnerabilities in networks.</p>
-                    <a href="#" class="btn">View Project</a>
+                    <p>A Python-based tool for detecting vulnerabilities and loops in networks.</p>
+                    <a href="https://github.com/mrrobot-h4ck3r/port-scanner" class="btn">View Project</a>
                 </div>
                 <div class="project-card">
-                    <img src="https://via.placeholder.com/400x250" alt="Project">
-                    <h3>Secure Authentication System</h3>
-                    <p>Implemented MFA for enhanced security.</p>
-                    <a href="#" class="btn">View Project</a>
+                    <!-- <img src="https://via.placeholder.com/400x250" alt="Project"> -->
+                    <h3>Web Crawler</h3>
+                    <p>Wayback Machine URL fetcher with smart categorization,
+                        Helps in finding discovered URLs (JS files, admin panels, APIs).</p>
+                    <a href="https://github.com/mrrobot-h4ck3r/waybackcrawl" class="btn">View Project</a>
+                </div>
+                <div class="project-card">
+                    <!-- <img src="https://via.placeholder.com/400x250" alt="Project"> -->
+                    <h3>Rapid Scanner</h3>
+                    <p>Single Domain Recon Script
+                        - Finds JS files, admin portals, open redirects
+                        - No external dependencies beyond requests
+                        - Runs in 1-2 minutes per domain</p>
+                    <a href="https://github.com/mrrobot-h4ck3r/rapid-scanner" class="btn">View Project</a>
                 </div>
             </div>
         </div>
@@ -227,23 +250,52 @@
                 <div class="contact-info">
                     <div class="info-item">
                         <i class="fas fa-envelope"></i>
-                        <p>hanonymous985@gmail.com</p>
+                        <p><a href="mailto:hanonymous985@gmail.com?subject=Portfolio%20Inquiry"
+                                class="contact-link">hanonymous985@gmail.com</a></p>
                     </div>
                     <div class="info-item">
                         <i class="fas fa-phone"></i>
-                        <p>+91 8869088124</p>
+                        <p><a href="tel:+91 8869088124" class="contact-link">+91 8869088124</a></p>
                     </div>
                     <div class="info-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <p>India</p>
                     </div>
                 </div>
-                <form class="contact-form">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <textarea placeholder="Your Message" required></textarea>
-                    <button type="submit" class="btn">Send Message</button>
-                </form>
+
+                <div class="cyber-form-container">
+                    <form id="cyber-contact-form" class="cyber-form"
+                        action="https://formsubmit.co/hanonymous985@gmail.com" method="POST">
+                        <div class="form-group">
+                            <label>Your Name</label>
+                            <div class="input-line">
+                                <input type="text" name="name" required>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Your Email</label>
+                            <div class="input-line">
+                                <input type="email" name="email" required>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Your Message</label>
+                            <div class="textarea-line">
+                                <textarea name="message" required></textarea>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="cyber-submit-btn">
+                            <span>Send Message</span>
+                            <div class="line"></div>
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -264,12 +316,12 @@
     <script src="js/three.min.js"></script>
     <script src="js/script.js"></script>
     <!-- Certificate Modal -->
-<div id="cert-modal" class="modal">
-  <div class="modal-content">
-    <span class="close-modal">&times;</span>
-    <img id="modal-cert-image" src="" alt="Certificate">
-  </div>
-</div>
+    <div id="cert-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <img id="modal-cert-image" src="" alt="Certificate">
+        </div>
+    </div>
 </body>
 
 </html>

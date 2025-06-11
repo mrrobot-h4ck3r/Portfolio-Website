@@ -109,17 +109,17 @@ const nextBtn = document.querySelector(".next-btn");
 
 // Store all certificates data
 const certificates = [
-     { thumb: "../Defronix.jpeg", full: "../Defronix.jpeg" },
-    { thumb: "../ARC.png", full: "../ARC.png" },
-    { thumb: "../CAP.png", full: "../CAP.png" },
-    { thumb: "../red_team.png", full: "../red_team.png" },
-    { thumb: "../practiCal.png", full: "../practiCal.png" },
-    { thumb: "../internship.png", full: "../internship.png" }, 
-    { thumb: "../EHE.jpeg", full: "../EHE.jpeg" },
-    { thumb: "../internship1.png", full: "../internship1.png" },
-    { thumb: "../safs.jpeg", full: "../safs.jpeg" },
-    { thumb: "../casestudyletter.jpeg", full: "../casestudyletter.jpeg" },
-    { thumb: "../MCEH.jpeg", full: "../MCEH.jpeg" }
+    { thumb: "Defronix.jpeg", full: "Defronix.jpeg" },
+    { thumb: "ARC.png", full: "ARC.png" },
+    { thumb: "CAP.png", full: "CAP.png" },
+    { thumb: "red_team.png", full: "red_team.png" },
+    { thumb: "practiCal.png", full: "practiCal.png" },
+    { thumb: "internship.png", full: "internship.png" }, 
+    { thumb: "EHE.jpeg", full: "EHE.jpeg" },
+    { thumb: "internship1.png", full: "internship1.png" },
+    { thumb: "safs.jpeg", full: "safs.jpeg" },
+    { thumb: "casestudyletter.jpeg", full: "casestudyletter.jpeg" },
+    { thumb: "MCEH.jpeg", full: "MCEH.jpeg" }
     // Add all your certificates here
 ];
 

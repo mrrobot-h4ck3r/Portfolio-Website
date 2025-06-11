@@ -438,7 +438,7 @@ canvas#3d-bg {
     justify-content: center;
     align-items: center;
 }
-/* 
+
 .close-viewer {
     position: absolute;
     top: 30px;
@@ -449,12 +449,12 @@ canvas#3d-bg {
     cursor: pointer;
     transition: 0.3s;
     z-index: 10;
-} */
+} 
 
-/* .close-viewer:hover {
-    /* color: #fff;
-    text-shadow: 0 0 15px #00ff88; */ */
-/* } */
+ .close-viewer:hover {
+    color: #fff;
+    text-shadow: 0 0 15px #00ff88; 
+ } 
 
 .cert-display {
     max-width: 90%;

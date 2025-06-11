@@ -476,21 +476,21 @@ canvas#3d-bg {
 
 .contact-content {
     display: flex;
-    gap: 50px;
+    gap: 200px;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
 .contact-info {
-    flex: 1;
-    padding: 30px;
-    background: rgba(20, 20, 20, 0.7);
-    border-radius: 8px;
-    border: 1px solid rgba(0, 255, 136, 0.3);
-    box-shadow: 0 0 15px rgba(0, 255, 136, 0.1);
-    max-width: 380px; /* Added fixed width */
-    margin-right: 50px; /* Added spacing from form */
+  flex: 1;
+  padding: 35px;
+  background: rgba(20, 20, 20, 0.7);
+  border-radius: 8px;
+  border: 1px solid rgba(0, 255, 136, 0.3);
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.1);
+  max-width: 405px;
+  margin-right: 80px;
 }
 
 .info-item {

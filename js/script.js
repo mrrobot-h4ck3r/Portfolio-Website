@@ -109,17 +109,17 @@ const nextBtn = document.querySelector(".next-btn");
 
 // Store all certificates data
 const certificates = [
-    { thumb: "path/to/cert1-thumb.jpg", full: "../images/Defronix.jpeg" },
-    { thumb: "path/to/cert1-thumb.jpg", full: "../images/ARC.png" },
-    { thumb: "path/to/cert2-thumb.jpg", full: "../images/CAP.png" },
-    { thumb: "path/to/cert2-thumb.jpg", full: "../images/red_team.png" },
-    { thumb: "path/to/cert1-thumb.jpg", full: "../images/practiCal.png" },
-    { thumb: "path/to/cert2-thumb.jpg", full: "../images/internship.png" }, 
-    { thumb: "path/to/cert1-thumb.jpg", full: "../images/EHE.jpeg" },
-    { thumb: "path/to/cert2-thumb.jpg", full: "../images/internship1.png" },
+    { thumb: "../images/Defronix.jpeg", full: "../images/Defronix.jpeg" },
+    { thumb: "../images/ARC.png", full: "../images/ARC.png" },
+    { thumb: "../images/CAP.png", full: "../images/CAP.png" },
+    { thumb: "../images/red_team.png", full: "../images/red_team.png" },
+    { thumb: "../images/practiCal.png", full: "../images/practiCal.png" },
+    { thumb: "../images/internship.png", full: "../images/internship.png" }, 
+    { thumb: "../images/EHE.jpeg", full: "../images/EHE.jpeg" },
+    { thumb: "../images/internship1.png", full: "../images/internship1.png" },
     { thumb: "path/to/cert1-thumb.jpg", full: "../images/safs.jpeg" },
-    { thumb: "path/to/cert2-thumb.jpg", full: "../images/casestudyletter.jpeg" },
-    { thumb: "path/to/cert2-thumb.jpg", full: "../images/MCEH.jpeg" }
+    { thumb: "../images/casestudyletter.jpeg", full: "../images/casestudyletter.jpeg" },
+    { thumb: "../images/MCEH.jpeg", full: "../images/MCEH.jpeg" }
     // Add all your certificates here
 ];
 

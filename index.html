@@ -312,7 +312,7 @@
         <!-- Certificate Viewer -->
         <div id="cert-viewer" class="cert-viewer">
             <div class="viewer-container">
-                <span class="close-viewer">&times;</span>
+                <span class="close-viewer"></span>
                 <div class="cert-display">
                     <img id="viewer-cert-image" src="" alt="Certificate">
                 </div>
@@ -424,13 +424,17 @@
             </div>
         </div>
     </footer>
- <!-- Certificate Modal -->
-    <div id="cert-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <img id="modal-cert-image" src="" alt="Certificate">
-        </div>
-    </div>
+ <!-- Certificate Modal -  -->
+<div id="cert-modal" class="cert-modal">
+  <span class="close-modal">&times;</span>
+  <div class="modal-content">
+    <img id="modal-cert"  alt="Certificate">
+  </div>
+  <div class="modal-nav">
+    <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+    <button class="nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+  </div>
+</div>
     <!-- Scripts -->
     <script src="js/three.min.js"></script>
    <script>

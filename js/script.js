@@ -99,28 +99,27 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-
-// Certificate Viewer Functionality
+// Certificate Viewer Functionality - REPLACE YOUR EXISTING CODE WITH THIS
 const certViewer = document.getElementById("cert-viewer");
 const viewerImage = document.getElementById("viewer-cert-image");
 const closeViewer = document.querySelector(".close-viewer");
 const prevBtn = document.querySelector(".prev-btn");
 const nextBtn = document.querySelector(".next-btn");
+const modalNav = document.querySelector(".modal-nav");
 
-// Store all certificates data
+// Store all certificates data (keep your existing array)
 const certificates = [
     { thumb: "Defronix.jpeg", full: "Defronix.jpeg" },
     { thumb: "ARC.png", full: "ARC.png" },
     { thumb: "CAP.png", full: "CAP.png" },
     { thumb: "red_team.png", full: "red_team.png" },
     { thumb: "practiCal.png", full: "practiCal.png" },
-    { thumb: "internship.png", full: "internship.png" }, 
+    { thumb: "internship.png", full: "internship.png" },
     { thumb: "EHE.jpeg", full: "EHE.jpeg" },
     { thumb: "internship1.png", full: "internship1.png" },
     { thumb: "safs.jpeg", full: "safs.jpeg" },
     { thumb: "casestudyletter.jpeg", full: "casestudyletter.jpeg" },
     { thumb: "MCEH.jpeg", full: "MCEH.jpeg" }
-    // Add all your certificates here
 ];
 
 let currentCertIndex = 0;
@@ -129,7 +128,15 @@ let currentCertIndex = 0;
 function openCertificateViewer(index) {
     currentCertIndex = index;
     viewerImage.src = certificates[index].full;
-    certViewer.style.display = "block";
+    certViewer.style.display = "flex"; // Changed to flex for better centering
+    
+    // Show/hide nav buttons based on certificate count
+    if (certificates.length <= 1) {
+        certViewer.classList.add('single-cert');
+    } else {
+        certViewer.classList.remove('single-cert');
+    }
+    
     document.body.style.overflow = "hidden";
 }
 
@@ -156,57 +163,28 @@ prevBtn.addEventListener("click", showPrevCert);
 nextBtn.addEventListener("click", showNextCert);
 
 // Close when clicking outside image
-certViewer.addEventListener("click", function (e) {
+certViewer.addEventListener("click", function(e) {
     if (e.target === certViewer) {
         closeCertificateViewer();
     }
 });
 
 // Keyboard navigation
-document.addEventListener("keydown", function (e) {
-    if (certViewer.style.display === "block") {
+document.addEventListener("keydown", function(e) {
+    if (certViewer.style.display === "flex") {
         if (e.key === "Escape") closeCertificateViewer();
         if (e.key === "ArrowLeft") showPrevCert();
         if (e.key === "ArrowRight") showNextCert();
     }
 });
 
-// Update your certificate items to use this function
+// Initialize certificate click handlers
 document.querySelectorAll(".cert-card").forEach((card, index) => {
     card.addEventListener("click", () => openCertificateViewer(index));
 });
 
+// REMOVE THE DUPLICATE MODAL CODE (the second block in your original file)
 
-// Certificate Modal Functionality
-const modal = document.getElementById("cert-modal");
-const modalImg = document.getElementById("modal-cert-image");
-const closeBtn = document.querySelector(".close-modal");
-
-function openModal(imgSrc) {
-    modal.style.display = "block";
-    modalImg.src = imgSrc;
-    document.body.style.overflow = "hidden"; // Prevent scrolling
-}
-
-function closeModal() {
-    modal.style.display = "none";
-    document.body.style.overflow = "auto"; // Re-enable scrolling
-}
-
-// Close modal when clicking X or outside
-closeBtn.onclick = closeModal;
-window.onclick = function (event) {
-    if (event.target == modal) {
-        closeModal();
-    }
-}
-
-// Close with ESC key
-document.onkeydown = function (event) {
-    if (event.key === "Escape") {
-        closeModal();
-    }
-}
 
 // 3D Background using Three.js
 if (document.getElementById('3d-bg')) {
@@ -266,53 +244,55 @@ if (document.getElementById('3d-bg')) {
 }
 
 // Contact Form Submission
-document.getElementById('contact-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  
-  const formData = new FormData(this);
-  const formObject = Object.fromEntries(formData.entries());
-  
-  // Send email using FormSubmit.co (free service)
-  fetch('https://formsubmit.co/ajax/hanonymous985@gmail.com', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    },
-    body: JSON.stringify(formObject)
-  })
-  .then(response => response.json())
-  .then(data => {
-    alert('Message sent successfully!');
-    this.reset();
-  })
-  .catch(error => {
-    console.error('Error:', error);
-    alert('There was a problem sending your message.');
-  });
+document.getElementById('contact-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+    const formObject = Object.fromEntries(formData.entries());
+
+    // Send email using FormSubmit.co (free service)
+    fetch('https://formsubmit.co/ajax/hanonymous985@gmail.com', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify(formObject)
+    })
+        .then(response => response.json())
+        .then(data => {
+            alert('Message sent successfully!');
+            this.reset();
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('There was a problem sending your message.');
+        });
 });
 
 // Form Submission with Animation
-document.getElementById('cyber-contact-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  
-  // Get form values
-  const formData = new FormData(this);
-  
-  // Simple animation on submit
-  const submitBtn = document.querySelector('.cyber-submit-btn');
-  submitBtn.innerHTML = '<span>Sending...</span>';
-  submitBtn.disabled = true;
-  
-  // Simulate sending (replace with actual form submission)
-  setTimeout(() => {
-    submitBtn.innerHTML = '<span>Message Sent!</span>';
-    this.reset();
-    
+document.getElementById('cyber-contact-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    // Get form values
+    const formData = new FormData(this);
+
+    // Simple animation on submit
+    const submitBtn = document.querySelector('.cyber-submit-btn');
+    submitBtn.innerHTML = '<span>Sending...</span>';
+    submitBtn.disabled = true;
+
+    // Simulate sending (replace with actual form submission)
     setTimeout(() => {
-      submitBtn.innerHTML = '<span>Send Message</span><div class="line"></div>';
-      submitBtn.disabled = false;
-    }, 2000);
-  }, 1500);
-  
+        submitBtn.innerHTML = '<span>Message Sent!</span>';
+        this.reset();
+
+        setTimeout(() => {
+            submitBtn.innerHTML = '<span>Send Message</span><div class="line"></div>';
+            submitBtn.disabled = false;
+        }, 2000);
+    }, 1500);
+
 });
+
+

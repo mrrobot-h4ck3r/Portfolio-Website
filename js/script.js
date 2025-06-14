@@ -99,15 +99,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Certificate Viewer Functionality - REPLACE YOUR EXISTING CODE WITH THIS
+// Certificate Viewer Functionality
 const certViewer = document.getElementById("cert-viewer");
 const viewerImage = document.getElementById("viewer-cert-image");
 const closeViewer = document.querySelector(".close-viewer");
 const prevBtn = document.querySelector(".prev-btn");
 const nextBtn = document.querySelector(".next-btn");
-const modalNav = document.querySelector(".modal-nav");
 
-// Store all certificates data (keep your existing array)
+// Store all certificates data
 const certificates = [
     { thumb: "Defronix.jpeg", full: "Defronix.jpeg" },
     { thumb: "ARC.png", full: "ARC.png" },
@@ -132,7 +131,6 @@ function openCertificateViewer(index) {
     certViewer.style.display = "flex";
     document.body.style.overflow = "hidden";
     
-    // Show/hide nav buttons
     if (certificates.length <= 1) {
         certViewer.classList.add('single-cert');
     } else {
@@ -144,7 +142,7 @@ function openCertificateViewer(index) {
     }, 10);
 }
 
-// Close viewer
+// Close viewer when clicking outside
 function closeCertificateViewer() {
     certViewer.style.display = "none";
     document.body.style.overflow = "auto";
@@ -173,9 +171,9 @@ function showNextCert() {
 prevBtn.addEventListener("click", showPrevCert);
 nextBtn.addEventListener("click", showNextCert);
 
-// Close when clicking outside (works for both mouse and touch)
+// Close when clicking outside the image
 certViewer.addEventListener("click", function(e) {
-    if (e.target === certViewer || e.target === viewerImage) {
+    if (e.target === certViewer || e.target.classList.contains('close-viewer')) {
         closeCertificateViewer();
     }
 });
@@ -191,7 +189,22 @@ document.addEventListener("keydown", function(e) {
 
 // Initialize certificate click handlers
 document.querySelectorAll(".cert-card").forEach((card, index) => {
-    card.addEventListener("click", () => openCertificateViewer(index));
+    card.addEventListener("click", (e) => {
+        e.preventDefault();
+        openCertificateViewer(index);
+    });
+});
+
+// Update the smooth scrolling for nav links to close mobile menu
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) {
+            document.querySelector('.nav-links').classList.remove('active');
+        }
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
 });
 // REMOVE THE DUPLICATE MODAL CODE (the second block in your original file)
 

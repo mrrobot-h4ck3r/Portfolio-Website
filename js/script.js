@@ -109,14 +109,22 @@ const nextBtn = document.querySelector(".next-btn");
 // Store all certificates data
 const certificates = [
     { thumb: "Defronix.jpeg", full: "Defronix.jpeg" },
-    { thumb: "ARC.png", full: "ARC.png" },
     { thumb: "CAP.png", full: "CAP.png" },
-    { thumb: "red_team.png", full: "red_team.png" },
-    { thumb: "practiCal.png", full: "practiCal.png" },
-    { thumb: "internship.png", full: "internship.png" },
     { thumb: "EHE.jpeg", full: "EHE.jpeg" },
     { thumb: "internship1.png", full: "internship1.png" },
+    { thumb: "internship.png", full: "internship.png" },
+    { thumb: "red_team.png", full: "red_team.png" },
+    { thumb: "practiCal.png", full: "practiCal.png" },
+    { thumb: "ARC.png", full: "ARC.png" },
+    { thumb: "OWASPTOP10.png", full: "OWASPTOP10.png" },
+    { thumb: "cert11.png", full: "cert11.png" },
+    { thumb: "certaaa.png", full: "certaaa.png" },
     { thumb: "safs.jpeg", full: "safs.jpeg" },
+    { thumb: "presecuritycert.png", full: "presecuritycert.png" },
+    { thumb: "webfundcert.png", full: "webfundcert.png" },
+    { thumb: "juniorcert.png", full: "juniorcert.png" },
+    { thumb: "adventofcyber2021.png", full: "adventofcyber2021.png" },
+    { thumb: "adventofcyber2022.png", full: "adventofcyber2022.png" },
     { thumb: "casestudyletter.jpeg", full: "casestudyletter.jpeg" },
     { thumb: "MCEH.jpeg", full: "MCEH.jpeg" }
 ];

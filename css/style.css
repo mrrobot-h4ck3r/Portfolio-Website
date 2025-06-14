@@ -539,6 +539,28 @@ canvas#3d-bg {
   right: 20px;
 }
 
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .nav-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+  
+  .prev-btn {
+    left: 10px;
+  }
+  
+  .next-btn {
+    right: 10px;
+  }
+}
+
+/* Hide navigation when only one certificate */
+#cert-viewer.single-cert .nav-btn {
+  display: none;
+}
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     .cert-display {

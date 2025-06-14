@@ -171,6 +171,25 @@ function showNextCert() {
 prevBtn.addEventListener("click", showPrevCert);
 nextBtn.addEventListener("click", showNextCert);
 
+
+// Update certificate viewer functionality
+certViewer.addEventListener("click", function(e) {
+    // Close when clicking outside the image or on close button
+    if (e.target === certViewer || e.target.classList.contains('close-viewer') || 
+        (!e.target.closest('.cert-display') && !e.target.closest('.nav-btn'))) {
+        closeCertificateViewer();
+    }
+});
+
+// Update mobile navigation behavior
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', function() {
+        // Close mobile menu if open
+        if (window.innerWidth <= 768) {
+            document.querySelector('.nav-links').classList.remove('active');
+        }
+    });
+});
 // Close when clicking outside the image
 certViewer.addEventListener("click", function(e) {
     if (e.target === certViewer || e.target.classList.contains('close-viewer')) {

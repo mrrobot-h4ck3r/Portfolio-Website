@@ -124,20 +124,24 @@ const certificates = [
 
 let currentCertIndex = 0;
 
-// Open viewer with clicked certificate
+// Open viewer with smooth transition
 function openCertificateViewer(index) {
     currentCertIndex = index;
+    viewerImage.style.opacity = 0;
     viewerImage.src = certificates[index].full;
-    certViewer.style.display = "flex"; // Changed to flex for better centering
+    certViewer.style.display = "flex";
+    document.body.style.overflow = "hidden";
     
-    // Show/hide nav buttons based on certificate count
+    // Show/hide nav buttons
     if (certificates.length <= 1) {
         certViewer.classList.add('single-cert');
     } else {
         certViewer.classList.remove('single-cert');
     }
     
-    document.body.style.overflow = "hidden";
+    setTimeout(() => {
+        viewerImage.style.opacity = 1;
+    }, 10);
 }
 
 // Close viewer
@@ -146,30 +150,34 @@ function closeCertificateViewer() {
     document.body.style.overflow = "auto";
 }
 
-// Navigation functions
+// Navigation with smooth transitions
 function showPrevCert() {
-    currentCertIndex = (currentCertIndex - 1 + certificates.length) % certificates.length;
-    viewerImage.src = certificates[currentCertIndex].full;
+    viewerImage.style.opacity = 0;
+    setTimeout(() => {
+        currentCertIndex = (currentCertIndex - 1 + certificates.length) % certificates.length;
+        viewerImage.src = certificates[currentCertIndex].full;
+        viewerImage.style.opacity = 1;
+    }, 300);
 }
 
 function showNextCert() {
-    currentCertIndex = (currentCertIndex + 1) % certificates.length;
-    viewerImage.src = certificates[currentCertIndex].full;
+    viewerImage.style.opacity = 0;
+    setTimeout(() => {
+        currentCertIndex = (currentCertIndex + 1) % certificates.length;
+        viewerImage.src = certificates[currentCertIndex].full;
+        viewerImage.style.opacity = 1;
+    }, 300);
 }
 
 // Event Listeners
-certViewer.addEventListener('click', function(e) {
-  // Close if clicking anywhere except navigation buttons
-  if (!e.target.classList.contains('nav-btn')) {
-    closeCertificateViewer();
-  }
-});
+prevBtn.addEventListener("click", showPrevCert);
+nextBtn.addEventListener("click", showNextCert);
 
-// Add touch event for mobile
-certViewer.addEventListener('touchend', function(e) {
-  if (!e.target.classList.contains('nav-btn')) {
-    closeCertificateViewer();
-  }
+// Close when clicking outside (works for both mouse and touch)
+certViewer.addEventListener("click", function(e) {
+    if (e.target === certViewer || e.target === viewerImage) {
+        closeCertificateViewer();
+    }
 });
 
 // Keyboard navigation
@@ -185,7 +193,6 @@ document.addEventListener("keydown", function(e) {
 document.querySelectorAll(".cert-card").forEach((card, index) => {
     card.addEventListener("click", () => openCertificateViewer(index));
 });
-
 // REMOVE THE DUPLICATE MODAL CODE (the second block in your original file)
 
 

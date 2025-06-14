@@ -158,15 +158,18 @@ function showNextCert() {
 }
 
 // Event Listeners
-closeViewer.addEventListener("click", closeCertificateViewer);
-prevBtn.addEventListener("click", showPrevCert);
-nextBtn.addEventListener("click", showNextCert);
+certViewer.addEventListener('click', function(e) {
+  // Close if clicking anywhere except navigation buttons
+  if (!e.target.classList.contains('nav-btn')) {
+    closeCertificateViewer();
+  }
+});
 
-// Close when clicking outside image
-certViewer.addEventListener("click", function(e) {
-    if (e.target === certViewer) {
-        closeCertificateViewer();
-    }
+// Add touch event for mobile
+certViewer.addEventListener('touchend', function(e) {
+  if (!e.target.classList.contains('nav-btn')) {
+    closeCertificateViewer();
+  }
 });
 
 // Keyboard navigation

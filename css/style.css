@@ -424,6 +424,7 @@ canvas#3d-bg {
     align-items: center;
     display: none;
     backdrop-filter: blur(5px);
+     touch-action: manipulation;
 }
 
 .modal-nav {
@@ -449,12 +450,12 @@ canvas#3d-bg {
     cursor: pointer;
     transition: 0.3s;
     z-index: 10;
-} 
+}
 
- .close-viewer:hover {
-    color: #fff;
+.close-viewer:hover {
+     color: #fff;
     text-shadow: 0 0 15px #00ff88; 
- } 
+ }
 
 .cert-display {
     max-width: 90%;
@@ -474,6 +475,7 @@ canvas#3d-bg {
     box-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
     animation: certFadeIn 0.4s ease-out;
      margin: 0 auto;
+      pointer-events: none; 
 }
 
 @keyframes certFadeIn {
@@ -487,7 +489,15 @@ canvas#3d-bg {
         transform: scale(1);
     }
 }
-
+#cert-viewer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
 .cert-nav {
     position: absolute;
     width: 100%;

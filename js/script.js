@@ -111,7 +111,6 @@ const certificates = [
     { thumb: "Defronix.jpeg", full: "Defronix.jpeg" },
     { thumb: "CAP.png", full: "CAP.png" },
     { thumb: "EHE.jpeg", full: "EHE.jpeg" },
-    { thumb: "internship1.png", full: "internship1.png" },
     { thumb: "internship.png", full: "internship.png" },
     { thumb: "red_team.png", full: "red_team.png" },
     { thumb: "practiCal.png", full: "practiCal.png" },
@@ -123,8 +122,13 @@ const certificates = [
     { thumb: "presecuritycert.png", full: "presecuritycert.png" },
     { thumb: "webfundcert.png", full: "webfundcert.png" },
     { thumb: "juniorcert.png", full: "juniorcert.png" },
+    { thumb: "cisco.png", full: "cisco.png" },
+    { thumb: "internship1.png", full: "internship1.png" },
     { thumb: "adventofcyber2021.png", full: "adventofcyber2021.png" },
     { thumb: "adventofcyber2022.png", full: "adventofcyber2022.png" },
+    { thumb: "linux.png", full: "linux.png" },
+    { thumb: "sql.png", full: "sql.png" },
+    { thumb: "android.png", full: "android.png" },
     { thumb: "casestudyletter.jpeg", full: "casestudyletter.jpeg" },
     { thumb: "MCEH.jpeg", full: "MCEH.jpeg" }
 ];
